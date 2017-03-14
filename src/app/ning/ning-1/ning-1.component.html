@@ -1,0 +1,47 @@
+<div class="ning-1"> Hello Ning-1Component! </div>
+
+<div>
+    <a [routerLink]="['./ning-2']"> 跳转ning-2</a>
+
+</div>
+
+<div>
+    <h4>
+        angular2 tree component
+    </h4>
+    <!--<tree-root [nodes]="nodes"></tree-root>-->
+
+    <tree-root #tree [nodes]="nodes" [options]="treeOptions" (onActivate)="selectNode($event)">
+
+        <template #treeNodeTemplate let-node="node" let-index="index">
+
+                <input (change)="check( node, $event)"  type="checkbox"
+                [indeterminate]="node.data.indeterminate"
+                [checked]="node.data.checked">
+  
+                {{ node.data.name }}
+           
+        </template>
+    </tree-root>
+</div>
+
+
+
+<section>
+    <!-- Checbox Four -->
+    <h3>Checkbox Four</h3>
+    <div class="checkboxFour">
+        <input type="checkbox" value="1" id="checkboxFourInput" name="" />
+        <label for="checkboxFourInput"></label>
+    </div>
+</section>
+
+
+<section>
+    <!-- Checbox Five -->
+    <h3>Checkbox Five</h3>
+    <div class="checkboxFive">
+        <input type="checkbox" value="1" id="checkboxFiveInput" name="" />
+        <label for="checkboxFiveInput"></label>
+    </div>
+</section>
